@@ -9,41 +9,43 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.consenso.model.Servico;
 import com.projeto.consenso.service.ServicoService;
 
 @RestController
+@RequestMapping(value = "/servicos")
 public class ServicoController {
     
     @Autowired
     private ServicoService servicoService;
 
-    @PostMapping("/servicos")
+    @PostMapping
     public Servico criarNovoServico(@RequestBody Servico servico){
         return servicoService.save(servico);
     }
 
-    @GetMapping("/servicos")
+    @GetMapping
     public List<Servico> obterTodosServicos(){
         return servicoService.findAll();
     }
 
-    @GetMapping("/servicos/{id}")
+    @GetMapping("/{id}")
     public Servico obterServicoPeloId(@PathVariable("id") long idservico){
         return servicoService.findById(idservico).get();
     }
 
-    @DeleteMapping("/servicos/{id}")
-    public String deletarServico(@PathVariable("idservico") long idservico){
+    @DeleteMapping("/{id}")
+    public String deletarServico(@PathVariable("id") long idservico){
         servicoService.deleteById(idservico);
         return "Servico deletado com sucesso";
     }
 
-    @PutMapping("/servicos")
+    @PutMapping
     public Servico atualizarServico(@RequestBody Servico servico){
-        Servico servicoBD = servicoService.findById(servico.getIdservico()).get();
+        Servico servicoBD = servicoService.findById(servico.getIdServico()).get();
         servicoBD.setNome(servico.getNome());
         servicoBD.setDescricao(servico.getDescricao());
         servicoBD = servicoService.save(servicoBD);

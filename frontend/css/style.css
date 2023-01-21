@@ -1,0 +1,43 @@
+body{
+    margin: 0 !important;
+}
+
+.navpadrao{
+    background-color: #0057DF  !important;
+}
+
+.agendaapp{
+    position: absolute;
+    font-family: 'Black Han Sans';
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 35px !important;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+
+
+.nav-link{
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    
+}
+
+.active{
+    color: #FFB800 !important;
+}
+
+.itemactive{
+    border-bottom: 4px #FFB800 solid;
+    margin-bottom: 0 !important;
+    
+}
+ul{
+    margin: 0 !important;
+}
+
+li{
+    magi
+    margin-left: 5%;
+}

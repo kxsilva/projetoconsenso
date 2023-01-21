@@ -9,38 +9,40 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.consenso.model.Agendamento;
 import com.projeto.consenso.service.AgendamentoService;
 
 @RestController
+@RequestMapping(value = "/agendamentos")
 public class AgendamentoController {
     @Autowired
     private AgendamentoService agendamentoService;
 
-    @PostMapping("/agendamentos")
+    @PostMapping
     public Agendamento criarNovoAgendamento(@RequestBody Agendamento agendamento){
         return agendamentoService.save(agendamento);
     }
 
-    @GetMapping("/agendamentos")
+    @GetMapping
     public List<Agendamento> obterTodosAgendamentos(){
         return agendamentoService.findAll();
     }
 
-    @GetMapping("/agendamentos/{id}")
-    public Agendamento obterAgendamentoPeloId(@PathVariable("id") long idagendamento){
-        return agendamentoService.findById(idagendamento).get();
+    @GetMapping("/{id}")
+    public Agendamento obterAgendamentoPeloId(@PathVariable("id") long id){
+        return agendamentoService.findById(id).get();
     }
 
-    @DeleteMapping("/agendamentos/{id}")
-    public String deletarAgendamento(@PathVariable("id") long idagendamento){
-        agendamentoService.deleteById(idagendamento);
+    @DeleteMapping("/{id}")
+    public String deletarAgendamento(@PathVariable("id") long id){
+        agendamentoService.deleteById(id);
         return "Agendamento deletado com sucesso";
     }
 
-    @PutMapping("/agendamentos")
+    @PutMapping
     public Agendamento atualizarAgendamento(@RequestBody Agendamento agendamento){
         Agendamento agendamentoBD = agendamentoService.findById(agendamento.getIdAgendamento()).get();
         agendamentoBD.setData(agendamento.getData());
