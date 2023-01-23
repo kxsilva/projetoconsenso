@@ -15,9 +15,6 @@ body{
     line-height: 20px;
     color: #FFFFFF;
 }
-
-
-
 .nav-link{
     font-weight: 600 !important;
     color: #FFFFFF !important;
@@ -30,14 +27,19 @@ body{
 
 .itemactive{
     border-bottom: 4px #FFB800 solid;
-    margin-bottom: 0 !important;
-    
 }
 ul{
     margin: 0 !important;
 }
 
-li{
-    magi
-    margin-left: 5%;
+.mg-0{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    height: 100% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.navli{
+    padding: 2% 0 !important;
 }
