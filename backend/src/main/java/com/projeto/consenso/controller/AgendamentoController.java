@@ -22,7 +22,7 @@ public class AgendamentoController {
     private AgendamentoService agendamentoService;
 
     @PostMapping
-    public Agendamento criarNovoAgendamento(@RequestBody Agendamento agendamento){
+    public Agendamento NovoAgendamento(@RequestBody Agendamento agendamento){
         return agendamentoService.save(agendamento);
     }
 
