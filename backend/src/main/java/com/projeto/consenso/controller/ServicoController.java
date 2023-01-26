@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projeto.consenso.model.Servico;
 import com.projeto.consenso.service.ServicoService;
 
+
 @RestController
 @RequestMapping(value = "/servicos")
 public class ServicoController {
@@ -20,13 +21,11 @@ public class ServicoController {
     @Autowired
     private ServicoService servicoService;
 
+    
     @PostMapping
     public Servico criarNovoServico(@RequestBody Servico servico) {
         return servicoService.save(servico);
     }
-
-
-
     @GetMapping
     public List<Servico> obterTodosServicos() {
         return servicoService.findAll();

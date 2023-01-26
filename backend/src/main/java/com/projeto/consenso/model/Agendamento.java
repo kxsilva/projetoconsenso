@@ -1,7 +1,5 @@
 package com.projeto.consenso.model;
 
-import java.sql.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +15,8 @@ public class Agendamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAgendamento;
-    private Date data;
-    private Date hora;
+    private String data;
+    private String hora;
 
     @ManyToOne
     @JoinColumn(name = "idServico")

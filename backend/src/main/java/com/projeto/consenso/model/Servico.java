@@ -21,5 +21,5 @@ public class Servico {
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
-    
+
 }

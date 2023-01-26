@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.projeto.consenso.model.Usuario;
 import com.projeto.consenso.service.UsuarioService;
 
@@ -20,6 +19,8 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+
+
     @PostMapping
     public Usuario criarUsuario(@RequestBody Usuario usuario){
         return usuarioService.save(usuario);
@@ -29,6 +30,16 @@ public class UsuarioController {
     public List<Usuario> obterUsuarios(){
         return usuarioService.findAll();
     }
+   /* @GetMapping("/listarTodos/tipo")
+    public List<Usuario> todosUsersComTipo(){
+        try{
+            return usuarioService.todosUsuariosComServicos();
+        }
+        catch(Exception e){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "erro");
+        }
+    }
+    */
 
     @GetMapping("/{id}")
     public Usuario obterUserPeloId(@PathVariable("id") long id){
