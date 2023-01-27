@@ -110,24 +110,39 @@ color: #FFFFFF!important;
     margin-top: 50px;
     border-radius: 15px;
     background-color: #0057DF;
-    color: #FFFFFF;
+    color: #FFFFFF!important;
     font-family: 'Encode Sans'!important;
     font-weight: 700;
     
 }
+.a-button{
+    color: #FFFFFF;
+    text-decoration: none!important;
+    
+}
+a:hover{
+    color: #FFFFFF;
+    
+}
 label{
     margin: 5px;
+    
 }
-select{
+textarea{
     border-radius: 7px;
-    padding: 8px;
+    padding: 5px;
+    font-family: 'Encode Sans';
+    
+}
+input{
+    border-radius: 7px;
+    padding: 5px;
     font-family: 'Encode Sans';
 }
-.pad-form{
-    padding: 5px; 
-    border-radius: 10px;
+.pad-label{
+    padding-top: 10px;
+    
 }
-
 
 
 /* Rodapé */

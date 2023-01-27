@@ -120,12 +120,17 @@ label{
 }
 select{
     border-radius: 7px;
-    padding: 8px;
+    padding: 5px;
     font-family: 'Encode Sans';
 }
-.pad-form{
-    padding: 5px; 
-    border-radius: 10px;
+.a-button{
+    color: #FFFFFF;
+    text-decoration: none!important;
+    
+}
+a:hover{
+    color: #FFFFFF;
+    
 }
 
 
