@@ -3,7 +3,7 @@
 
 html,
 body {
-    height: 100vh;
+    height: 100%;
 }
 
 /* Cabeçalho */
@@ -13,47 +13,14 @@ body {
 
 }
 
-/* @media (max-width:900px){
-    .pborda{
-        margin: 15px 0 0 500px!important;
-        
-        
-    }
-    
-}
-@media (min-width:700px){
-    .borda{
-        margin: 15px 0 0 300px!important;
-        
-        
-    }
-    
-} */
-
-/* @media (min-width:430px){
-    .borda{
-        margin: 15px 0 0 235px!important;
-        
-        
-    }
-    
-}
-     */
-
 .borda {
     margin: 15px 0 0;
-
-
-
 
 }
 
 .menu {
     width: 150px !important;
     height: 80px !important;
-
-
-
     padding: 0;
 }
 
@@ -78,7 +45,7 @@ header a {
     background-color:
         #0057DF !important;
     height: 10vh;
-
+    width: 100vw;
 
 }
 
@@ -113,14 +80,12 @@ center h2 {
 .Formulario {
     height: 400px;
     width: 500px;
-
-
-
-
 }
 
 center img {
-    padding: 50px;
+    width: 11vw !important;
+    height: 7vh;
+    margin: 7% auto !important;
 }
 
 .btn-agendar {
@@ -170,11 +135,10 @@ form p{
 }
 
 .logo {
-
     padding: 0;
-
     align-items: center;
-
+    width: 23vh;
+    height: 7vh;
 }
 
 footer a {

@@ -19,13 +19,11 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-
-
     @PostMapping
     public Usuario criarUsuario(@RequestBody Usuario usuario){
         return usuarioService.save(usuario);
     }
-
+    
     @GetMapping
     public List<Usuario> obterUsuarios(){
         return usuarioService.findAll();

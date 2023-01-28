@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
@@ -20,8 +20,8 @@ public class Usuario {
     private String email;
     private String senha;
 
-    @ManyToOne
-    @JoinColumn(name = "id_TipoUsuario")
+    @OneToOne
+    @JoinColumn(name = "idTipoUsuario")
     private TipoUsuario tipoUsuario;
 
 }
