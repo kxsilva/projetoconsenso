@@ -11,16 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById("inputEmail");
     const senha = document.getElementById("inputSenha");
     const confirmarSenha = document.getElementById("inputConfirmarSenha");
-    const tipoUsuario = document.getElementById("tipoUsuario");
-    var nUsuario = 0;
-    if(tipoUsuario.value == "Cliente"){
-      nUsuario = 1;
-    }else if(tipoUsuario.value == "Prestador"){
-      nUsuario = 2;
-    }else{
-      console.log("Usuario sem tipo")
-    }
-    validarEntradas(nome, sobrenome, email, senha, confirmarSenha, nUsuario)
+  
+    validarEntradas(nome, sobrenome, email, senha, confirmarSenha)
 
     
   
@@ -30,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-function validarEntradas(n, sn, e, s, cs, nUsuario) {
+function validarEntradas(n, sn, e, s, cs) {
   const nomeValue = String(n.value);
   const sobrenomeValue = String(sn.value);
   const emailValue = String(e.value);
@@ -80,7 +72,7 @@ function validarEntradas(n, sn, e, s, cs, nUsuario) {
               email: e.value,
               senha: s.value,
               tipoUsuario: {
-                idTipoUsuario: nUsuario
+                idTipoUsuario: 1
               }
           }
     )

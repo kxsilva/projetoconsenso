@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
@@ -18,7 +18,7 @@ public class Agendamento {
     private String data;
     private String hora;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "idServico")
     private Servico servico;
 
