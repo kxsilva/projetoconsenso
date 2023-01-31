@@ -28,16 +28,11 @@ public class UsuarioController {
     public List<Usuario> obterUsuarios(){
         return usuarioService.findAll();
     }
-   /* @GetMapping("/listarTodos/tipo")
-    public List<Usuario> todosUsersComTipo(){
-        try{
-            return usuarioService.todosUsuariosComServicos();
-        }
-        catch(Exception e){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "erro");
-        }
+   
+    @GetMapping("/login/{email}/{senha}")
+    public Usuario obterUserPeloId(@PathVariable("email") String email, @PathVariable("senha") String senha){
+        return usuarioService.buscarLogin(email, senha);
     }
-    */
 
     @GetMapping("/{id}")
     public Usuario obterUserPeloId(@PathVariable("id") long id){

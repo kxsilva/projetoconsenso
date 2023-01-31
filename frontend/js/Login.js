@@ -1,31 +1,32 @@
 //referenciar os elementos html
 document.addEventListener('DOMContentLoaded', () => {
-    var users = {};
     const login = document.getElementById("login");
     const email = document.getElementById("email");
     const senha = document.getElementById("senha");
     login.addEventListener("submit", async(e) => {
         e.preventDefault();
-        fetch("http://localhost:8080/users")
-        .then((res) => {
-            users = res.json();
-            console.log(users)
-            array.forEach(users => {
-                if(users.email === email.value && users.senha === senha.value){
-                    alert("Bem vindo" + users.nome)
-                } else{
-                    alert("Email ou senha Incorretos")
+        await fetch("http://localhost:8080/users/login/" + email.value + "/" + senha.value)
+        .then(res => {
+            return res.json();
+        }).then(saida => {
+            console.log(saida)
+            if(saida != null){
+                localStorage.setItem("idUsuario", saida.idUsuario);
+                alert("Bem vindo " + saida.nome);
+                if(saida.tipoUsuario.idTipoUsuario == 1){
+                    window.location.replace("index.html")
+                }else{
+                    window.location.replace("MeusServicos.html")
                 }
-            });
-            //window.loScation.href("home.html")
-        })
-        .catch((erro) => { console.error(erro) })
-        })
-        
-    })
+                
+            }
+        }).catch((erro) => { console.error(erro) })
 
-   
+        })
+
+})
+
+
     
-
 
 

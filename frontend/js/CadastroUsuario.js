@@ -79,6 +79,7 @@ function validarEntradas(n, sn, e, s, cs) {
 })
     .then((res) => {
         console.log(res)
+        alert("Cadastrado com sucesso")
         // localStorage.setItem("idUsuario", data.idUsuario);
         // const idUsuario = localStorage.getItem("idUsuario");
         // Redirecionar para uma página (ex. Home)

@@ -23,17 +23,32 @@
 <body>
   <!-- Cabeçalho -->
   
-    <center>
-      <header>
-          <div class="row fundomenu">
-              <div class="col-12">
-                  <h2>Agendapp</h2>
-  
-              </div>
-          
-          </div>
-        </header>
-    </center>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fundomenu">
+      <div class="container" style="padding-top: 0; padding-bottom: 0;">
+        
+        <a class="navbar-brand menu" href="#">agendapp</a>
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon cormenu"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse nav-div2" id="navbarNav">
+          <ul class="navbar-nav ms-auto nav-div2">
+            <li class="nav-item active nav-div2">
+              <a id="AgendarServico" class="nav-link  " aria-current="page" href="Login.html">Login</a>
+                
+            </li>
+            <li class="nav-item nav-div2">
+              <a id="MeusAgendamentos" class="nav-link menuLocalization" href="CadastrarUsuario.html" >Cadastrar-se</a>
+              <p class="espaco"></p>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
     
     <!-- Tela de Cadastro -->
     <center>
@@ -67,7 +82,7 @@
       
             <div class="col-6">
               <label for="hora" class="col-12" style="text-align: left;">Senha: </label>
-             <input type="password" placeholder="Digite sua senha" id="inputSenha" class="col-12">
+             <input type="password" minlength="8" placeholder="Digite sua senha" id="inputSenha" class="col-12">
              <p id="senha-invalido" class="invalid-feedback ms-0">Senha tem que ter no mínimo 8 caracteres</p>
             </div>
             <div class="col-6">

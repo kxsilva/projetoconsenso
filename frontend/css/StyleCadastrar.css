@@ -8,9 +8,13 @@ body {
 
 /* Cabeçalho */
 
+.espaco{
+    border-bottom: 4px solid orange;
+    margin-top:25px;
+}
 .menuLocalization {
     color: #FFB800 !important;
-
+    
 }
 
 .borda {
@@ -36,7 +40,7 @@ header a {
     text-align: right;
     text-decoration: none;
     position: relative;
-
+    margin-top: 10px;
 
     color: #FFFFFF !important;
 }
@@ -83,7 +87,7 @@ center h2 {
 }
 
 center img {
-    width: 11vw !important;
+    width: 200px !important;
     height: 7vh;
     margin: 7% auto !important;
 }

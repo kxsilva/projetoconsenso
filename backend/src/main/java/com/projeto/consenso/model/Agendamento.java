@@ -22,4 +22,8 @@ public class Agendamento {
     @JoinColumn(name = "idServico")
     private Servico servico;
 
+    @OneToOne
+    @JoinColumn(name="idUsuario")
+    private Usuario usuario;
+
 }

@@ -48,11 +48,11 @@
     </nav>
   </header>
   <!-- Formulário -->
-  <form action="formulario" class="Formulario">
+  <form action="formulario" id="formulario" class="Formulario">
     <div class="row">
       <div class="col-12">
         <label for="selecionar_servico" class="col-12">Nome: </label>
-        <input type="text" class="col-12" placeholder="Digite o nome do serviço">
+        <input type="text" class="col-12" id="nome" placeholder="Digite o nome do serviço">
       </div>
 
     </div>
@@ -63,7 +63,7 @@
        <textarea name="descricao" id="descricao" cols="34" rows="10"></textarea>
     </div>
 
-    <button type="submit" class="col-12 btn-agendar"><a class="a-button" href="MeusServicos.html">CADASTRAR</a></button>
+    <button type="submit" class="col-12 btn-agendar">CADASTRAR</button>
       
     
 
@@ -107,20 +107,11 @@
 
   </footer>
 
-
-
-
-
-
-
-
-
-
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-
+  <script src="js/NovoServico.js"></script>
 
 </body>
 

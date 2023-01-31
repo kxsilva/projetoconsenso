@@ -3,6 +3,8 @@ package com.projeto.consenso.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,9 +34,15 @@ public class AgendamentoController {
     }
 
     @GetMapping("/{id}")
-    public Agendamento obterAgendamentoPeloId(@PathVariable("id") long id){
-        return agendamentoService.findById(id).get();
+    public ResponseEntity obterAgendamentosPeloId(@PathVariable("id") long id){
+        List<Agendamento> agendamento = agendamentoService.agendamentosPorId(id);
+
+        ResponseDTO responseDTO = new ResponseDTO(agendamento, HttpStatus.OK);
+        
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDTO);
     }
+
+    
 
     @DeleteMapping("/{id}")
     public String deletarAgendamento(@PathVariable("id") long id){
