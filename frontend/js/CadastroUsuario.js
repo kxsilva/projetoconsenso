@@ -67,10 +67,10 @@ function validarEntradas(n, sn, e, s, cs) {
       },
       body: JSON.stringify(
           { 
-              nome: n.value,
-              sobrenome: sn.value,
-              email: e.value,
-              senha: s.value,
+              nome: nomeValue,
+              sobrenome: sobrenomeValue,
+              email: emailValue,
+              senha: senhaValue,
               tipoUsuario: {
                 idTipoUsuario: 1
               }

@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         await fetch("http://localhost:8080/users/login/" + email.value + "/" + senha.value)
         .then(res => {
-            return res.json();
+            
+            console.log(res.json)
+             return res.json();
         }).then(saida => {
             console.log(saida)
             if(saida != null){

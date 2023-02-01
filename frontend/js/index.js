@@ -1,4 +1,7 @@
 //referenciar os elementos html
+if(!localStorage.getItem("idUsuario")){
+    window.location.replace("Login.html")
+}
 document.addEventListener('DOMContentLoaded', () => {
     const agendar = document.getElementById("agendar");
     const servico = document.getElementById("servico")

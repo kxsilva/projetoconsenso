@@ -1,4 +1,7 @@
 //referenciar os elementos html
+if(!localStorage.getItem("idUsuario")){
+    window.location.replace("Login.html")
+}
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("formulario");
     const nome = document.getElementById("nome")
