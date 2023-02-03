@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse nav-div2" id="navbarNav">
           <ul class="navbar-nav ms-auto nav-div2">
             <li class="nav-item active nav-div2">
-              <a id="AgendarServico" class="nav-link " aria-current="page" href="index.html">Agendar
+              <a id="AgendarServico" class="nav-link " aria-current="page" href="Agendar.html">Agendar
                 serviço</a>
                
             </li>
@@ -50,16 +50,14 @@
     </nav>
   </header>
   <!-- Formulário -->
-  <form action="formulario" class="Formulario">
+  <form action="formulario" class="Formulario" id="editar">
     <div class="row">
       <div class="col">
-        <label for="selecionar_servico" class="col-12">Selecione o serviço: </label>
-        <select class="col-12" id="selecione_servico">
+        <label for="selecionar_servico" class="col-12">Selecione para qual serviço quer alterar: </label>
+        <select class="col-12" id="servico">
           <option value=""></option>
-          <option value="">Instalação</option>
-          <option value="">Manutenção</option>
-
-
+          <!-- <option value="">Instalação</option>
+          <option value="">Manutenção</option> -->
 
         </select>
       </div>
@@ -69,23 +67,16 @@
     <div class="row">
       <div class="col-7">
         <label for="data" class="col-12">Data:</label>
-        <select class="col-12" id="Data">
-          <option value=""></option>
-        </select>
+        <input type="date" name="editarAgendamento" id="data" class="pad-form">
       </div>
 
       <div class="col-5">
         <label for="hora" class="col-12">Hora:</label>
-        <select class="col-12" id="Hora">
-          <option value=""></option>
-        </select>
+        <input type="time" name="horaAgendamento" id="hora" class="pad-form">
       </div>
     </div>
 
-    <button type="submit" class="col-12 btn-agendar">
-        <a href="MeusAgendamentos.html" class="a-button" > SALVAR</a>
-     
-    </button>
+    <button type="submit" class="col-12 btn-agendar">Editar</button>
 
     </div>
 
@@ -95,13 +86,7 @@
 
   <!-- Rodapé -->
 
-  <!-- <div style="display: flex;">
-        <img class="logo" src="img/Consenso_Marca_7 2.png" alt="">
-        <div style="margin-top: 2%; text-align: right;">
-          <p>Projeto Consenso 2023</p>
-          <p>Agendapp &copy; Treina Recifes</p>
-        </div>
-      </div> -->
+
 
   <footer class="rodape">
     <div class="container ">
@@ -140,7 +125,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-
+  <script src="js/EditarAgendamentos.js"></script>
 
 </body>
 

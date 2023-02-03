@@ -1,7 +1,11 @@
 package com.projeto.consenso.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,8 +36,17 @@ public class ServicoController {
     }
 
     @GetMapping("/{id}")
-    public Servico obterServicoPeloId(@PathVariable("id") long idservico) {
-        return servicoService.findById(idservico).get();
+    public Optional<Servico> obterServicoId(@PathVariable("id") long id) {
+        return servicoService.findById(id);
+    }
+
+  @GetMapping("/p/{id}")
+    public ResponseEntity obterServicosPeloId(@PathVariable("id") long id){
+        List<Servico> servico = servicoService.servicosPorId(id);
+
+        ServicoResponseDTO responseDTO = new ServicoResponseDTO(servico, HttpStatus.OK);
+        
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDTO);
     }
 
     @DeleteMapping("/{id}")

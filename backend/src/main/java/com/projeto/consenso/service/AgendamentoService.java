@@ -12,4 +12,7 @@ import com.projeto.consenso.model.Agendamento;
 public interface AgendamentoService extends JpaRepository<Agendamento, Long>{
    @Query("select e from Agendamento e where e.usuario.idUsuario = :id")
    public List<Agendamento> agendamentosPorId(Long id); 
+
+   @Query("select e from Agendamento e where e.servico.usuario.idUsuario = :id")
+   public List<Agendamento> agendamentosPrestador(Long id);
 }

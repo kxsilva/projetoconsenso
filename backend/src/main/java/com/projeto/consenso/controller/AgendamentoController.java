@@ -33,11 +33,20 @@ public class AgendamentoController {
         return agendamentoService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/cliente/{id}")
     public ResponseEntity obterAgendamentosPeloId(@PathVariable("id") long id){
         List<Agendamento> agendamento = agendamentoService.agendamentosPorId(id);
 
-        ResponseDTO responseDTO = new ResponseDTO(agendamento, HttpStatus.OK);
+        AgendamentoResponseDTO responseDTO = new AgendamentoResponseDTO(agendamento, HttpStatus.OK);
+        
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDTO);
+    }
+
+    @GetMapping("/p/{id}")
+    public ResponseEntity obterAgendamentosPrestador(@PathVariable("id") long id){
+        List<Agendamento> agendamento = agendamentoService.agendamentosPrestador(id);
+
+        AgendamentoResponseDTO responseDTO = new AgendamentoResponseDTO(agendamento, HttpStatus.OK);
         
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDTO);
     }
@@ -52,11 +61,6 @@ public class AgendamentoController {
 
     @PutMapping
     public Agendamento atualizarAgendamento(@RequestBody Agendamento agendamento){
-        Agendamento agendamentoBD = agendamentoService.findById(agendamento.getIdAgendamento()).get();
-        agendamentoBD.setData(agendamento.getData());
-        agendamentoBD.setHora(agendamento.getHora());
-        agendamentoBD = agendamentoService.save(agendamentoBD);
-
-        return agendamentoBD;
+        return agendamentoService.save(agendamento);
     }
 }

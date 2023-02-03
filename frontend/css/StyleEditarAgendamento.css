@@ -67,7 +67,7 @@ font-size: 20px;
 line-height: 11px;
 display: flex;
 align-items: center;
-text-align: right;
+
 text-decoration: none;
 position: relative;
 
@@ -132,6 +132,11 @@ a:hover{
     color: #FFFFFF;
     
 }
+.pad-form{
+    padding: 5px; 
+    border-radius: 10px;
+}
+
 
 
 

@@ -41,7 +41,7 @@
             </li>
             <li class="nav-item nav-div2">
               <a id="MeusAgendamentos" class="nav-link menuLocalization" href="CadastrarUsuario.html" >Cadastrar-se</a>
-              <p class="espaco"></p>
+              <img src="img/border.png" alt="" height="4px" class="bordaCadastro me-auto">
             </li>
           </ul>
         </div>
@@ -63,12 +63,12 @@
             <div class="col-6">
               <label style="display: flex;" for="selecionar_servico" class="col-12">Nome: </label>
              <input type="text" placeholder="Insira seu nome" class="col-12" id="inputNome" required>
-             
+             <p id="nome-invalido" class="invalid-feedback ms-0">Primeira letra maiúcula. Ex.: Exemplo (obrigatório)</p>
             </div>
             <div class="col-6">
               <label  style="display: flex;" for="selecionar_servico" class="col-12">Sobrenome: </label>
               <input type="text" placeholder="Insira seu sobrenome" id="inputSobrenome" class="col-12" required>
-              
+              <p id="sobrenome-invalido" class="invalid-feedback ms-0">Primeira letra maiúcula. Ex.: Exemplo (obrigatório)</p>
             </div>
           </div>
       
@@ -90,7 +90,17 @@
              <input type="password" placeholder="Digite sua senha novamente" id="inputConfirmarSenha" class="col-12" required="required">
              <p id="confirmarsenha-invalido" class="invalid-feedback ms-0">Este campo deve ser igual ao campo da senha</p>
             </div>
-  
+            <div class="col-12" id="barraSenha">
+
+            </div>
+            <div class="col-12">
+              <select name="tipoUsuario" id="tipoUsuario" class="col-6 tipoUsuario">
+                <option value="1">Cliente</option>
+                <option value="2">Prestador</option>
+              </select>
+            </div>
+            
+           
           </div>
           <button type="submit" class="col-12 btn-agendar">
             CADASTRAR
@@ -110,13 +120,7 @@
 
   <!-- Rodapé -->
 
-  <!-- <div style="display: flex;">
-        <img class="logo" src="img/Consenso_Marca_7 2.png" alt="">
-        <div style="margin-top: 2%; text-align: right;">
-          <p>Projeto Consenso 2023</p>
-          <p>Agendapp &copy; Treina Recifes</p>
-        </div>
-      </div> -->
+  
 
   <footer class="rodape">
     <div class="container ">

@@ -8,8 +8,8 @@ html, body{
     margin: 0;
 }
 .tamanho{
-    min-height: 87%;
-   
+    min-height: 85%;
+    
 }
 
 /* Cabeçalho */
@@ -23,17 +23,9 @@ html, body{
     color:#FFB800 !important;
     
 }
-@media screen {
-    .borda{
-        margin-left: 100px;
-        margin-top: 15px;
-    }
-    
-}
+
 .borda{
     margin: 15px 0 0;
-    
-    
 }
 .menu{
 width: 150px!important;
@@ -57,7 +49,7 @@ font-size: 20px;
 line-height: 11px;
 display: flex;
 align-items: center;
-text-align: right;
+
 text-decoration: none;
 position: relative;
 
@@ -180,7 +172,7 @@ a:hover{
     margin-top: 50px;
     
     bottom: 0;
-    position:relative;
+    position:fixed;
     width: 100%;
     
         

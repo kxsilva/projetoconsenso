@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem("idUsuario", saida.idUsuario);
                 alert("Bem vindo " + saida.nome);
                 if(saida.tipoUsuario.idTipoUsuario == 1){
-                    window.location.replace("index.html")
+                    window.location.replace("Agendar.html")
                 }else{
                     window.location.replace("MeusServicos.html")
                 }
                 
             }
-        }).catch((erro) => { console.error(erro) })
+        }).catch((erro) => { alert("Email ou senha incorretos") })
 
         })
 

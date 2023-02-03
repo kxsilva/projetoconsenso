@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             )
         })
         .then(res => {
+            alert("Servico cadastrado com sucesso")
+            window.location.replace("MeusServicos.html")
             console.log(res)
         }).catch((erro) => { console.error(erro) })
 

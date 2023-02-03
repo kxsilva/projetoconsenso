@@ -8,6 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = document.getElementById("data")
     const hora = document.getElementById("hora")
 
+    window.addEventListener("load", async (e) => {
+        e.preventDefault();
+        console.log("a")
+        await fetch("http://localhost:8080/servicos")
+          .then(async (res) => {
+            const servicos = await res.json();
+            console.log(servicos);
+       
+              servicos.forEach((res) => {
+                let op = document.createElement("option");
+                
+                const id = res.idServico;
+                const nome = res.nome;
+                op.value = id;
+                op.innerHTML = `${nome}`;
+    
+                servico.appendChild(op);
+              });
+            
+          })
+
+          .catch((erro) => {
+            console.error(erro);
+          });
+      });
+    
+
     agendar.addEventListener("submit", async(e) => {
         e.preventDefault();
         await fetch("http://localhost:8080/agendamentos", {
@@ -28,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(res => {
             console.log(res)
+            alert("Agendamento realizado com sucesso.")
         }).catch((erro) => { console.error(erro) })
 
         })
-
-})
+    });
